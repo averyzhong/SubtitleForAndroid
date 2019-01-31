@@ -1,4 +1,7 @@
+[ ![Download](https://api.bintray.com/packages/averyzhong/AndroidRepo/subtitle/images/download.svg) ](https://bintray.com/averyzhong/AndroidRepo/subtitle/_latestVersion)
+
 # 外挂字幕组件库（subtitle）集成文档
+
 
 ## 概述
 subtitle是一个Android平台视频播放多字幕支持库，几乎支持所有的Android版本，可以需要外挂字幕中的项目集成，支持.SRT、.SCC、.ASS、.STL、.TTML格式的字幕文件。
