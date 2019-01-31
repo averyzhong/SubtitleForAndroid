@@ -92,7 +92,7 @@ implementation 'com.avery:subtitle:1.0.0'
 ## License
 ll source code is licensed under Apache License 2.0. If you create your own app (free or commercial) that uses some or all of the code from this codebase, you MUST attribute it to the original author, no exceptions. You can do so by displaying an "About" or "Licenses" screen in your app that links back to this GitHub page AND includes the following notice:
 ```
-Copyright 2019 - Avery
+Copyright 2019 - Avery Zhong
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
