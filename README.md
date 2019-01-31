@@ -16,7 +16,7 @@ implementation 'com.avery:subtitle:1.0.0'
 1. 在播放器布局文件中添加`SimpleSubtitleView`
 
 ```
-<com.fonsview.subtitle.widget.SimpleSubtitleView
+<com.avery.subtitle.widget.SimpleSubtitleView
         android:id="@+id/subtitle_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,8 +32,10 @@ implementation 'com.avery:subtitle:1.0.0'
 2. 绑定`MediaPlayer`到`SimpleSubtitleView`
 
 ```
- private SimpleSubtitleView mSubtitleView;
-    ....省略无关代码.....
+  private SimpleSubtitleView mSubtitleView;
+
+   ....省略无关代码.....
+
   mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
              @Override
              public void onPrepared(final MediaPlayer mp) {
@@ -64,9 +66,9 @@ implementation 'com.avery:subtitle:1.0.0'
 
 ```
 ....
-private SubtitleEngine mSubtitleEngine = new DefaultSubtitleEngine();
+ private SubtitleEngine mSubtitleEngine = new DefaultSubtitleEngine();
 
-mSubtitleEngine.setOnSubtitlePreparedListener(new OnSubtitlePreparedListener() {
+ mSubtitleEngine.setOnSubtitlePreparedListener(new OnSubtitlePreparedListener() {
         @Override
         public void onSubtitlePrepared(@Nullable final List<Subtitle> subtitles) {
                 // 启动SubtitleEngine
@@ -74,7 +76,7 @@ mSubtitleEngine.setOnSubtitlePreparedListener(new OnSubtitlePreparedListener() {
            }
         });
 
-mSubtitleEngine.setOnSubtitleChangeListener(new OnSubtitleChangeListener() {
+ mSubtitleEngine.setOnSubtitleChangeListener(new OnSubtitleChangeListener() {
         @Override
          public void onSubtitleChanged(@Nullable final Subtitle subtitle) {
                 // 拿到Subtitle对象来刷新你自定义过的字幕显示控件，注意subtitle可能为空
