@@ -6,6 +6,12 @@
 ## 概述
 subtitle是一个Android平台视频播放多字幕支持库，几乎支持所有的Android版本，可以需要外挂字幕中的项目集成，支持.SRT、.SCC、.ASS、.STL、.TTML格式的字幕文件。
 
+## 下载
+
+```
+implementation 'com.avery:subtitle:1.0.0'
+```
+
 ## 集成方式
 1. 在播放器布局文件中添加`SimpleSubtitleView`
 
@@ -81,7 +87,7 @@ mSubtitleEngine.setOnSubtitleChangeListener(new OnSubtitleChangeListener() {
 
 自定义的最后一步就是通过`DefaultSubtitleEngine`的生命周期相应方法：`start()`，`pause()`，`resume()`，`stop()`，`reset()`处理好控件的生命周期，以免导致bug。
 
-# License
+## License
 ll source code is licensed under Apache License 2.0. If you create your own app (free or commercial) that uses some or all of the code from this codebase, you MUST attribute it to the original author, no exceptions. You can do so by displaying an "About" or "Licenses" screen in your app that links back to this GitHub page AND includes the following notice:
 ```
 Copyright 2014 - Saravan Pantham
