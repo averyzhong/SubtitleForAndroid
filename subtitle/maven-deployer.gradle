@@ -1,0 +1,54 @@
+/*
+ *                       Copyright (C) of Avery
+ *
+ *                              _ooOoo_
+ *                             o8888888o
+ *                             88" . "88
+ *                             (| -_- |)
+ *                             O\  =  /O
+ *                          ____/`- -'\____
+ *                        .'  \\|     |//  `.
+ *                       /  \\|||  :  |||//  \
+ *                      /  _||||| -:- |||||-  \
+ *                      |   | \\\  -  /// |   |
+ *                      | \_|  ''\- -/''  |   |
+ *                      \  .-\__  `-`  ___/-. /
+ *                    ___`. .' /- -.- -\  `. . __
+ *                 ."" '<  `.___\_<|>_/___.'  >'"".
+ *                | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *                \  \ `-.   \_ __\ /__ _/   .-` /  /
+ *           ======`-.____`-.___\_____/___.-`____.-'======
+ *                              `=- -='
+ *           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *              Buddha bless, there will never be bug!!!
+ */
+
+apply plugin: 'maven'
+afterEvaluate { project ->
+    uploadArchives {
+        configuration = configurations.archives
+        repositories {
+            mavenDeployer {
+                repository(url: 'http://172.16.201.228:8881/repository/FonsviewHosted/') {
+                    authentication(userName: 'admin', password: 'admin123')
+                }
+                pom.project {
+                    version '1.0.0'
+                    artifactId 'subtitle'
+                    groupId 'com.fonsview'
+                    packaging 'aar'
+                    description 'update version 1.0.0 add new method'
+                }
+            }
+        }
+    }
+
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.sourceFiles
+    }
+
+    artifacts {
+        archives androidSourcesJar
+    }
+}

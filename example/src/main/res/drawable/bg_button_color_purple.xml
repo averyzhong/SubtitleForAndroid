@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~                       Copyright (C) of Avery
+  ~
+  ~                              _ooOoo_
+  ~                             o8888888o
+  ~                             88" . "88
+  ~                             (| -_- |)
+  ~                             O\  =  /O
+  ~                          ____/`- -'\____
+  ~                        .'  \\|     |//  `.
+  ~                       /  \\|||  :  |||//  \
+  ~                      /  _||||| -:- |||||-  \
+  ~                      |   | \\\  -  /// |   |
+  ~                      | \_|  ''\- -/''  |   |
+  ~                      \  .-\__  `-`  ___/-. /
+  ~                    ___`. .' /- -.- -\  `. . __
+  ~                 ."" '<  `.___\_<|>_/___.'  >'"".
+  ~                | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+  ~                \  \ `-.   \_ __\ /__ _/   .-` /  /
+  ~           ======`-.____`-.___\_____/___.-`____.-'======
+  ~                              `=- -='
+  ~           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ~              Buddha bless, there will never be bug!!!
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <stroke android:width="5dp" android:color="#009688"/>
+            <padding android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="5dp"/>
+            <solid android:color="#7F0E92"/>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <stroke android:width="5dp" android:color="#009688"/>
+            <padding android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="5dp"/>
+            <solid android:color="#7F0E92"/>
+        </shape>
+    </item>
+
+    <item >
+        <shape android:shape="rectangle">
+            <padding android:bottom="5dp" android:left="5dp" android:right="5dp" android:top="5dp"/>
+            <solid android:color="#7F0E92"/>
+        </shape>
+    </item>
+
+</selector>

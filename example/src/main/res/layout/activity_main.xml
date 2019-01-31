@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~                       Copyright (C) of Avery
+  ~
+  ~                              _ooOoo_
+  ~                             o8888888o
+  ~                             88" . "88
+  ~                             (| -_- |)
+  ~                             O\  =  /O
+  ~                          ____/`- -'\____
+  ~                        .'  \\|     |//  `.
+  ~                       /  \\|||  :  |||//  \
+  ~                      /  _||||| -:- |||||-  \
+  ~                      |   | \\\  -  /// |   |
+  ~                      | \_|  ''\- -/''  |   |
+  ~                      \  .-\__  `-`  ___/-. /
+  ~                    ___`. .' /- -.- -\  `. . __
+  ~                 ."" '<  `.___\_<|>_/___.'  >'"".
+  ~                | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+  ~                \  \ `-.   \_ __\ /__ _/   .-` /  /
+  ~           ======`-.____`-.___\_____/___.-`____.-'======
+  ~                              `=- -='
+  ~           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ~              Buddha bless, there will never be bug!!!
+  -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C1648"
+    tools:context=".MainActivity">
+
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="false"/>
+
+    <com.avery.subtitle.widget.SimpleSubtitleView
+        android:id="@+id/subtitle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom|center_horizontal"
+        android:text="字幕将在这里显示"
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="外挂字幕功能测试"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_play_pause"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_button"
+            android:text="播放"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_settings"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_button"
+            android:text="设置"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_forward"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_button"
+            android:text="快进1分"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_rewind"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_button"
+            android:text="快退1分"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

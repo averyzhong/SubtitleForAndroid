@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~                       Copyright (C) of Avery
+  ~
+  ~                              _ooOoo_
+  ~                             o8888888o
+  ~                             88" . "88
+  ~                             (| -_- |)
+  ~                             O\  =  /O
+  ~                          ____/`- -'\____
+  ~                        .'  \\|     |//  `.
+  ~                       /  \\|||  :  |||//  \
+  ~                      /  _||||| -:- |||||-  \
+  ~                      |   | \\\  -  /// |   |
+  ~                      | \_|  ''\- -/''  |   |
+  ~                      \  .-\__  `-`  ___/-. /
+  ~                    ___`. .' /- -.- -\  `. . __
+  ~                 ."" '<  `.___\_<|>_/___.'  >'"".
+  ~                | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+  ~                \  \ `-.   \_ __\ /__ _/   .-` /  /
+  ~           ======`-.____`-.___\_____/___.-`____.-'======
+  ~                              `=- -='
+  ~           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ~              Buddha bless, there will never be bug!!!
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#aa9217A7"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#aa9217A7"/>
+        </shape>
+    </item>
+
+    <item >
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#aa000000"/>
+        </shape>
+    </item>
+</selector>
