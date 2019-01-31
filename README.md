@@ -50,7 +50,7 @@ subtitle是一个Android平台视频播放多字幕支持库，几乎支持所�
 
 ```
 
-`SimpleSubtitleView`还有其他与`Activity`生命周期相似的方法：`start()`，`pause()`，`resume`，`stop`，`reset()` 可以根据具体集成情况在适当的地方进行调用。
+`SimpleSubtitleView`还有其他与`Activity`生命周期相似的方法：`start()`，`pause()`，`resume()`，`stop()`，`reset()` 可以根据具体集成情况在适当的地方进行调用。
 
 ## 自定义字幕显示控件
 如果不想使用提供的`SimpleSubtitleView`控件，你还可以轻松自定义你自己的显示控件，只需通过
@@ -79,7 +79,7 @@ mSubtitleEngine.setOnSubtitleChangeListener(new OnSubtitleChangeListener() {
 ....
 ```
 
-自定义的最后一步就是通过`DefaultSubtitleEngine`的生命周期相应方法：`start()`，`pause()`，`resume`，`stop`，`reset()`处理好控件的生命周期，以免导致bug。
+自定义的最后一步就是通过`DefaultSubtitleEngine`的生命周期相应方法：`start()`，`pause()`，`resume()`，`stop()`，`reset()`处理好控件的生命周期，以免导致bug。
 
 # License
 ll source code is licensed under Apache License 2.0. If you create your own app (free or commercial) that uses some or all of the code from this codebase, you MUST attribute it to the original author, no exceptions. You can do so by displaying an "About" or "Licenses" screen in your app that links back to this GitHub page AND includes the following notice:
