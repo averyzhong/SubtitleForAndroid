@@ -29,7 +29,7 @@ afterEvaluate { project ->
         configuration = configurations.archives
         repositories {
             mavenDeployer {
-                repository(url: 'http://172.16.201.228:8881/repository/FonsviewHosted/') {
+                repository(url: 'http://172.16.201.228:8881/repository/Avery/') {
                     authentication(userName: 'admin', password: 'admin123')
                 }
                 pom.project {

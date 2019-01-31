@@ -26,13 +26,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 //项目主页
-def siteUrl = 'https://github.com/averyzhong/AndroidSubtitle'
+def siteUrl = 'https://github.com/averyzhong/SubtitleForAndroid'
 //项目的git地址
-def gitUrl = 'https://github.com/averyzhong/AndroidSubtitle.git'
+def gitUrl = 'https://github.com/averyzhong/SubtitleForAndroid.git'
 //发布到JCenter上的项目名字
 def libName = "subtitle"
 
-group = "com.fonview"
+group = "com.avery"
 version = "1.0.0"
 
 //生成源文件
@@ -41,11 +41,11 @@ task sourcesJar(type: Jar) {
     classifier = 'sources'
 }
 
-//生成Javadoc文档
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
+////生成Javadoc文档
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
 
 ////文档打包成jar
 //task javadocJar(type: Jar, dependsOn: javadoc) {
@@ -73,7 +73,7 @@ install {
             project {
                 packaging 'aar'
                 //项目描述，随意填
-                name 'Jcenter demo.'
+                name 'Subtitle For Android'
                 url siteUrl
                 licenses {
                     license {
@@ -105,16 +105,16 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
-    key = properties.getProperty("bintray.apikey")   //读取 local.properties 文件里面的 bintray.apikey
+    user = properties.getProperty("bintray.user")   //读取 local.properties 文件里面的 bintray.user
+    key = properties.getProperty("bintray.apikey")  //读取 local.properties 文件里面的 bintray.apikey
     configurations = ['archives']
     pkg {
-        //注意：这里的repo值必须要和你创建Maven仓库的时候的名字一样
-        repo = "MyRepo"
+        //注意：这里的repo值必须要和创建Maven仓库的时候的名字一样
+        repo = "AndroidRepo"
         //发布到JCenter上的项目名字
         name = libName
         //项目描述
-        desc = 'Jcenter demo.'
+        desc = 'Subtitle For Android'
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
