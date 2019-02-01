@@ -23,7 +23,7 @@
  *              Buddha bless, there will never be bug!!!
  */
 
-package com.avery.subtitle;
+package com.avery.subtitle.example;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -65,14 +65,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
-        mVideoView = findViewById(R.id.video_view);
-        mSubtitleView = findViewById(R.id.subtitle_view);
         initViews();
         setupEventListeners();
         initPlayer();
     }
 
     private void initViews() {
+        mVideoView = findViewById(R.id.video_view);
+        mSubtitleView = findViewById(R.id.subtitle_view);
         mTvTips = findViewById(R.id.tv_tips);
         mBtnPlayPause = findViewById(R.id.btn_play_pause);
         mBtnSettings = findViewById(R.id.btn_settings);

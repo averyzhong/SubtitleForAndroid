@@ -23,7 +23,7 @@
  *              Buddha bless, there will never be bug!!!
  */
 
-package com.avery.subtitle;
+package com.avery.subtitle.example;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
