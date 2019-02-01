@@ -61,8 +61,8 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
 `SimpleSubtitleView`还有其他与`Activity`生命周期相似的方法：`start()`，`pause()`，`resume()`，`stop()`，`reset()` 可以根据具体集成情况在适当的地方进行调用。
 
 ## 注意！！！
-> 1. 必须在`MediaPlayer`初始化完成后才能调用`SimpleSubtitleView.setSubtitlePath()`方，否则会出现异常，最好的时机是在MediaPlayer的`onPrepared`回调方法里。
-> 2. 必须在`MediaPlayer`销毁之前先销毁`SimpleSubtitleView`，即调用`SimpleSubtitleView.destroy()`，否则会出现异常，最好的时机是在调用`MediaPlayer.release()`方法前。
+> 1. 必须在`MediaPlayer`初始化完成后才能调用`SimpleSubtitleView.setSubtitlePath()`方法，否则会出现异常，最好的时机是在MediaPlayer的`onPrepared`回调方法里调用`SimpleSubtitleView.setSubtitlePath()`。
+> 2. 必须在`MediaPlayer`销毁之前先销毁`SimpleSubtitleView`，即调用`SimpleSubtitleView.destroy()`，否则会出现异常，最好的时机是在调用`MediaPlayer.release()`方法前先调用调用`SimpleSubtitleView.destroy()`。
 
 
 ## 自定义字幕显示控件
