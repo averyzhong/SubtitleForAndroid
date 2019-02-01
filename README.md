@@ -9,7 +9,7 @@
 
 
 ## 概述
-subtitle是一个Android平台视频播放多字幕支持库，几乎支持所有的Android版本，可以需要外挂字幕中的项目集成，支持.SRT、.SCC、.ASS、.STL、.TTML格式的字幕文件。
+Subtitle For Android 是一个Android平台视频播放多字幕支持库，几乎支持所有的Android版本，可以需要外挂字幕中的项目集成，支持.SRT、.SCC、.ASS、.STL、.TTML格式的字幕文件。
 
 ## 下载
 
