@@ -31,7 +31,6 @@ import com.avery.subtitle.model.Subtitle;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -48,12 +47,13 @@ public class SubtitleCache {
         if (md5Key == null) {
             return;
         }
-        mCache.put(md5Key, new ArrayList<>(subtitles));
+        mCache.put(md5Key, subtitles);
     }
 
     @Nullable
     public List<Subtitle> get(String key) {
         String md5Key = getMD5(key);
+
         if (md5Key == null) {
             return null;
         }
@@ -73,6 +73,5 @@ public class SubtitleCache {
             return null;
         }
     }
-
 
 }

@@ -51,6 +51,10 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
     private static final int REFRESH_INTERVAL = 100;
 
     @Nullable
+    private HandlerThread mHandlerThread;
+    @Nullable
+    private Handler mWorkHandler;
+    @Nullable
     private List<Subtitle> mSubtitles;
     private UIRenderTask mUIRenderTask;
     private MediaPlayer mMediaPlayer;
@@ -58,16 +62,13 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
     private OnSubtitlePreparedListener mOnSubtitlePreparedListener;
     private OnSubtitleChangeListener mOnSubtitleChangeListener;
 
-    private HandlerThread mHandlerThread;
-    private Handler mWorkHandler;
-
     public DefaultSubtitleEngine() {
         mCache = new SubtitleCache();
-        init();
 
     }
 
-    private void init() {
+    private void initWorkThread() {
+        stopWorkThread();
         mHandlerThread = new HandlerThread("SubtitleFindThread");
         mHandlerThread.start();
         mWorkHandler = new Handler(mHandlerThread.getLooper(), new Handler.Callback() {
@@ -83,10 +84,23 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
                     }
 
                 }
-                mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, delay);
+                if (mWorkHandler != null) {
+                    mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, delay);
+                }
                 return true;
             }
         });
+    }
+
+    private void stopWorkThread() {
+        if (mHandlerThread != null) {
+            mHandlerThread.quit();
+            mHandlerThread = null;
+        }
+        if (mWorkHandler != null) {
+            mWorkHandler.removeCallbacksAndMessages(null);
+            mWorkHandler = null;
+        }
     }
 
     private void notifyRefreshUI(final Subtitle subtitle) {
@@ -103,13 +117,14 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
 
     @Override
     public void setSubtitlePath(final String path) {
+        initWorkThread();
         reset();
         if (TextUtils.isEmpty(path)) {
             Log.w(TAG, "loadSubtitleFromRemote: path is null.");
             return;
         }
         mSubtitles = mCache.get(path);
-        if (mSubtitles != null) {
+        if (mSubtitles != null && !mSubtitles.isEmpty()) {
             Log.d(TAG, "from cache.");
             notifyPrepared();
             return;
@@ -128,7 +143,7 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
                 }
                 mSubtitles = new ArrayList<>(captions.values());
                 notifyPrepared();
-                mCache.put(path, mSubtitles);
+                mCache.put(path, new ArrayList<>(captions.values()));
             }
 
             @Override
@@ -141,9 +156,6 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
     @Override
     public void reset() {
         stop();
-        if (mSubtitles != null) {
-            mSubtitles.clear();
-        }
         mSubtitles = null;
         mUIRenderTask = null;
     }
@@ -160,7 +172,10 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
             return;
         }
         stop();
-        mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, REFRESH_INTERVAL);
+        if (mWorkHandler != null) {
+            mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, REFRESH_INTERVAL);
+        }
+
     }
 
     @Override
@@ -175,15 +190,17 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
 
     @Override
     public void stop() {
-        mWorkHandler.removeMessages(MSG_REFRESH);
+        if (mWorkHandler != null) {
+            mWorkHandler.removeMessages(MSG_REFRESH);
+        }
     }
 
     @Override
     public void destroy() {
         Log.d(TAG, "destroy: ");
-        stop();
+        stopWorkThread();
         reset();
-        mHandlerThread.quit();
+
     }
 
     private void notifyPrepared() {
