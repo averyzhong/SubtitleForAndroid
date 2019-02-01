@@ -17,12 +17,11 @@ subtitle是一个Android平台视频播放多字幕支持库，几乎支持所�
 implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Download"气泡后面的数字
 ```
 
+>
 > 如果Gradle同步出现如下错误：
->
->   Manifest merger failed : uses-sdk:minSdkVersion 14 cannot be smaller
->   than version 19 declared in library [com.avery:subtitle:1.0.2]
->
+> Manifest merger failed : uses-sdk:minSdkVersion 14 cannot be smaller than version 19 declared in library [com.avery:subtitle:1.0.2]
 > 请在`AndroidManifest.xml`加入`<uses-sdk tools:overrideLibrary="com.avery.subtitle"/>`
+>
 
 ## 集成方式
 1. 在播放器布局文件中添加`SimpleSubtitleView`
