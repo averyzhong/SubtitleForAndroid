@@ -9,7 +9,7 @@ subtitle是一个Android平台视频播放多字幕支持库，几乎支持所�
 ## 下载
 
 ```
-implementation 'com.avery:subtitle:1.0.0'
+implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"download"气泡后面的数字
 ```
 
 ## 集成方式
