@@ -1,8 +1,3 @@
-## 快照
-
-![](screenshot/one.png)
-![](screenshot/two.png)
-
 [ ![Download](https://api.bintray.com/packages/averyzhong/AndroidRepo/subtitle/images/download.svg) ](https://bintray.com/averyzhong/AndroidRepo/subtitle/_latestVersion)
 
 # 外挂字幕组件库（subtitle）集成文档
@@ -123,3 +118,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
+## 快照
+![](screenshot/one.png)
+![](screenshot/two.png)
