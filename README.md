@@ -1,3 +1,8 @@
+## 快照
+
+![](screenshot/one.png)
+![](screenshot/two.png)
+
 [ ![Download](https://api.bintray.com/packages/averyzhong/AndroidRepo/subtitle/images/download.svg) ](https://bintray.com/averyzhong/AndroidRepo/subtitle/_latestVersion)
 
 # 外挂字幕组件库（subtitle）集成文档

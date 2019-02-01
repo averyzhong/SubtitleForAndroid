@@ -97,6 +97,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/bg_button"
             android:text="快进1分"
+            android:visibility="gone"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold"/>
@@ -105,6 +106,7 @@
             android:id="@+id/btn_rewind"
             android:layout_width="200dp"
             android:layout_height="70dp"
+            android:visibility="gone"
             android:layout_margin="5dp"
             android:background="@drawable/bg_button"
             android:text="快退1分"
