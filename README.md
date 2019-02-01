@@ -101,6 +101,10 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
 
 自定义的最后一步就是通过`DefaultSubtitleEngine`的生命周期相应方法：`start()`，`pause()`，`resume()`，`stop()`，`reset()`处理好控件的生命周期，以免导致bug。
 
+## 快照
+![](screenshot/one.png)
+![](screenshot/two.png)
+
 ## License
 ll source code is licensed under Apache License 2.0. If you create your own app (free or commercial) that uses some or all of the code from this codebase, you MUST attribute it to the original author, no exceptions. You can do so by displaying an "About" or "Licenses" screen in your app that links back to this GitHub page AND includes the following notice:
 ```
@@ -118,7 +122,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
-## 快照
-![](screenshot/one.png)
-![](screenshot/two.png)
