@@ -182,8 +182,7 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
                         mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, delay);
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
-                    stop();
+                    // ignored
                 }
                 return true;
             }

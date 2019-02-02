@@ -33,7 +33,7 @@ def gitUrl = 'https://github.com/averyzhong/SubtitleForAndroid.git'
 def libName = "subtitle"
 
 group = "com.avery"
-version = "1.0.5"
+version = "1.0.6"
 
 //生成源文件
 task sourcesJar(type: Jar) {

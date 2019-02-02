@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:text="字幕颜色："
                 android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -95,8 +95,7 @@
                 android:layout_height="wrap_content"
                 android:text="字幕大小："
                 android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textSize="20sp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -111,8 +110,8 @@
                     android:background="@drawable/bg_button2"
                     android:text="小"
                     android:textColor="#ffffff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    />
 
                 <Button
                     android:id="@+id/btn_middle"
@@ -122,8 +121,8 @@
                     android:background="@drawable/bg_button2"
                     android:text="中"
                     android:textColor="#ffffff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    />
 
                 <Button
                     android:id="@+id/btn_big"
@@ -133,8 +132,8 @@
                     android:background="@drawable/bg_button2"
                     android:text="大"
                     android:textColor="#ffffff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    />
 
             </LinearLayout>
 
@@ -152,8 +151,8 @@
                 android:layout_height="wrap_content"
                 android:text="字幕位置："
                 android:textColor="#ffffff"
-                android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -168,8 +167,8 @@
                     android:background="@drawable/bg_button2"
                     android:text="顶部"
                     android:textColor="#ffffff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    />
 
                 <Button
                     android:id="@+id/btn_center"
@@ -179,8 +178,8 @@
                     android:background="@drawable/bg_button2"
                     android:text="中间"
                     android:textColor="#ffffff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    />
 
                 <Button
                     android:id="@+id/btn_bottom"
@@ -190,8 +189,8 @@
                     android:background="@drawable/bg_button2"
                     android:text="底部"
                     android:textColor="#ffffff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    />
 
             </LinearLayout>
 

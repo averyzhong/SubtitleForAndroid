@@ -30,9 +30,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -78,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnSettings = findViewById(R.id.btn_settings);
         mBtnForward = findViewById(R.id.btn_forward);
         mBtnRewind = findViewById(R.id.btn_rewind);
+        mBtnPlayPause.requestFocus();
     }
 
     private void setupEventListeners() {
@@ -110,19 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void pause() {
         mVideoView.pause();
         mBtnPlayPause.setText("播放");
-    }
-
-    @Override
-    protected void onPause() {
-        mSubtitleView.pause();
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mBtnPlayPause.requestFocus();
-        mSubtitleView.resume();
     }
 
     @Override
@@ -183,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 @Override
                 public void onSubtitleFontSizeChange(final int fontSize) {
-                    mSubtitleView.setTextSize(sd2px(mContext, fontSize));
+                    mSubtitleView.setTextSize(fontSize);
                 }
 
                 @Override
@@ -211,8 +197,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSettingsDialog.show(getSupportFragmentManager(), "SettingsDialog");
     }
 
-    private int sd2px(@NonNull Context context, int sp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, context.getResources().getDisplayMetrics());
-    }
 
 }

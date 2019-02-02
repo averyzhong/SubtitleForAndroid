@@ -57,7 +57,7 @@
         android:layout_centerInParent="true"
         android:text="外挂字幕功能测试"
         android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
     <LinearLayout
@@ -70,48 +70,46 @@
 
         <Button
             android:id="@+id/btn_play_pause"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
             android:layout_margin="5dp"
             android:background="@drawable/bg_button"
             android:text="播放"
             android:textColor="#ffffff"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
         <Button
             android:id="@+id/btn_settings"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
             android:layout_margin="5dp"
             android:background="@drawable/bg_button"
             android:text="设置"
             android:textColor="#ffffff"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
         <Button
             android:id="@+id/btn_forward"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
             android:layout_margin="5dp"
             android:background="@drawable/bg_button"
             android:text="快进1分"
-            android:visibility="gone"
             android:textColor="#ffffff"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
         <Button
             android:id="@+id/btn_rewind"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:visibility="gone"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
             android:layout_margin="5dp"
             android:background="@drawable/bg_button"
             android:text="快退1分"
             android:textColor="#ffffff"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
