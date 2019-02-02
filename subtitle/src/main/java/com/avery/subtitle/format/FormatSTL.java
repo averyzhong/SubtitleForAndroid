@@ -197,8 +197,6 @@ public class FormatSTL implements TimedTextFileFormat {
 		return tto;
 	}
 
-
-
 	public byte[] toFile(TimedTextObject tto) {
 		
 		//first we check if the TimedTextObject had been built, otherwise...

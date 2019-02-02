@@ -249,11 +249,6 @@ public class FormatTTML implements TimedTextFileFormat {
 		return tto;
 	}
 
-
-
-
-
-
 	public String[] toFile(TimedTextObject tto) {
 
 		//first we check if the TimedTextObject had been built, otherwise...

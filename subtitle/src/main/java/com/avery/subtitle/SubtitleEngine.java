@@ -39,7 +39,7 @@ import java.util.List;
 public interface SubtitleEngine {
 
     /**
-     * 加载字幕
+     * 设置字幕路径，加载字幕
      *
      * @param path 字幕路径（本地路径或者是远程路径）
      */
@@ -75,16 +75,37 @@ public interface SubtitleEngine {
      */
     void destroy();
 
+    /**
+     * 绑定MediaPlayer
+     *
+     * @param mediaPlayer mediaPlayer
+     */
     void bindToMediaPlayer(MediaPlayer mediaPlayer);
 
+    /**
+     * 设置字幕准备完成监接口
+     *
+     * @param listener OnSubtitlePreparedListener
+     */
     void setOnSubtitlePreparedListener(OnSubtitlePreparedListener listener);
 
+    /**
+     * 设置字幕改变监听接口
+     *
+     * @param listener OnSubtitleChangeListener
+     */
     void setOnSubtitleChangeListener(OnSubtitleChangeListener listener);
 
+    /**
+     * 幕准备完成监接口
+     */
     interface OnSubtitlePreparedListener {
         void onSubtitlePrepared(@Nullable List<Subtitle> subtitles);
     }
 
+    /**
+     * 字幕改变监听接口
+     */
     interface OnSubtitleChangeListener {
         void onSubtitleChanged(@Nullable Subtitle subtitle);
     }

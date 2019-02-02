@@ -67,49 +67,6 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
 
     }
 
-    private void initWorkThread() {
-        stopWorkThread();
-        mHandlerThread = new HandlerThread("SubtitleFindThread");
-        mHandlerThread.start();
-        mWorkHandler = new Handler(mHandlerThread.getLooper(), new Handler.Callback() {
-            @Override
-            public boolean handleMessage(final Message msg) {
-                long delay = REFRESH_INTERVAL;
-                if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
-                    long position = mMediaPlayer.getCurrentPosition();
-                    Subtitle subtitle = SubtitleFinder.find(position, mSubtitles);
-                    notifyRefreshUI(subtitle);
-                    if (subtitle != null) {
-                        delay = subtitle.end.mseconds - position;
-                    }
-
-                }
-                if (mWorkHandler != null) {
-                    mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, delay);
-                }
-                return true;
-            }
-        });
-    }
-
-    private void stopWorkThread() {
-        if (mHandlerThread != null) {
-            mHandlerThread.quit();
-            mHandlerThread = null;
-        }
-        if (mWorkHandler != null) {
-            mWorkHandler.removeCallbacksAndMessages(null);
-            mWorkHandler = null;
-        }
-    }
-
-    private void notifyRefreshUI(final Subtitle subtitle) {
-        if (mUIRenderTask == null) {
-            mUIRenderTask = new UIRenderTask(mOnSubtitleChangeListener);
-        }
-        mUIRenderTask.execute(subtitle);
-    }
-
     @Override
     public void bindToMediaPlayer(final MediaPlayer mediaPlayer) {
         mMediaPlayer = mediaPlayer;
@@ -201,6 +158,54 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
         stopWorkThread();
         reset();
 
+    }
+
+    private void initWorkThread() {
+        stopWorkThread();
+        mHandlerThread = new HandlerThread("SubtitleFindThread");
+        mHandlerThread.start();
+        mWorkHandler = new Handler(mHandlerThread.getLooper(), new Handler.Callback() {
+            @Override
+            public boolean handleMessage(final Message msg) {
+                try {
+                    long delay = REFRESH_INTERVAL;
+                    if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+                        long position = mMediaPlayer.getCurrentPosition();
+                        Subtitle subtitle = SubtitleFinder.find(position, mSubtitles);
+                        notifyRefreshUI(subtitle);
+                        if (subtitle != null) {
+                            delay = subtitle.end.mseconds - position;
+                        }
+
+                    }
+                    if (mWorkHandler != null) {
+                        mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, delay);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    stop();
+                }
+                return true;
+            }
+        });
+    }
+
+    private void stopWorkThread() {
+        if (mHandlerThread != null) {
+            mHandlerThread.quit();
+            mHandlerThread = null;
+        }
+        if (mWorkHandler != null) {
+            mWorkHandler.removeCallbacksAndMessages(null);
+            mWorkHandler = null;
+        }
+    }
+
+    private void notifyRefreshUI(final Subtitle subtitle) {
+        if (mUIRenderTask == null) {
+            mUIRenderTask = new UIRenderTask(mOnSubtitleChangeListener);
+        }
+        mUIRenderTask.execute(subtitle);
     }
 
     private void notifyPrepared() {
