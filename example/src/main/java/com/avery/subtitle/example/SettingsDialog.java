@@ -138,8 +138,6 @@ public class SettingsDialog extends DialogFragment implements View.OnClickListen
 
         void onSubtitlePositionChange(Position position);
 
-
-
         enum Position {
             TOP, CENTER, BOTTOM
         }
