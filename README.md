@@ -14,7 +14,7 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
 
 >
 > 如果Gradle同步出现如下错误：
-> Manifest merger failed : uses-sdk:minSdkVersion xx cannot be smaller than version 19 declared in library [com.avery:subtitle:x.x.x]
+> Manifest merger failed : uses-sdk:minSdkVersion xx cannot be smaller than version xx declared in library [com.avery:subtitle:x.x.x]
 >
 >请在`AndroidManifest.xml`中加入`<uses-sdk tools:overrideLibrary="com.avery.subtitle"/>`
 >
