@@ -19,7 +19,7 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
 >请在`AndroidManifest.xml`中加入`<uses-sdk tools:overrideLibrary="com.avery.subtitle"/>`
 >
 
-## 集成方式
+## 怎样使用？
 1. 在播放器布局文件中添加`SimpleSubtitleView`
 
 ```
