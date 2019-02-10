@@ -86,7 +86,7 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
  mSubtitleEngine.setOnSubtitlePreparedListener(new OnSubtitlePreparedListener() {
         @Override
         public void onSubtitlePrepared(@Nullable final List<Subtitle> subtitles) {
-                // 启动SubtitleEngine
+                // 启动字幕刷新任务
                 mSubtitleEngine.start();
            }
         });
