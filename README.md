@@ -71,8 +71,8 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
 `SimpleSubtitleView`集成自`TextView`，所以`TextView`的所有样式设置都适用于`SimpleSubtitleView`，如设置字幕颜色、字幕大小、字幕对其方式等。
 
 ## 注意！！！
-> 1. 必须在`MediaPlayer`初始化完成后才能调用`SimpleSubtitleView.setSubtitlePath()`方法，否则会出现异常，最好的时机是在MediaPlayer的`onPrepared`回调方法里调用`SimpleSubtitleView.setSubtitlePath()`。
-> 2. 必须在`MediaPlayer`销毁之前先销毁`SimpleSubtitleView`，即调用`SimpleSubtitleView.destroy()`，否则会出现异常，最好的时机是在调用`MediaPlayer.release()`方法前先调用调用`SimpleSubtitleView.destroy()`。
+> 1. 最好在`MediaPlayer`初始化完成后才能调用`SimpleSubtitleView.setSubtitlePath()`方法，最好的时机是在MediaPlayer的`onPrepared`回调方法里调用`SimpleSubtitleView.setSubtitlePath()`。
+> 2. 最好在`MediaPlayer`销毁之前先销毁`SimpleSubtitleView`，即调用`SimpleSubtitleView.destroy()`，最好的时机是在调用`MediaPlayer.release()`方法前先调用调用`SimpleSubtitleView.destroy()`。
 
 
 ## 自定义字幕显示控件
@@ -86,7 +86,7 @@ implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Downloa
  mSubtitleEngine.setOnSubtitlePreparedListener(new OnSubtitlePreparedListener() {
         @Override
         public void onSubtitlePrepared(@Nullable final List<Subtitle> subtitles) {
-                // 启动SubtitleEngine
+                // 启动字幕刷新任务
                 mSubtitleEngine.start();
            }
         });
