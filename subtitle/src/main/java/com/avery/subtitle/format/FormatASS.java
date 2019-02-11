@@ -197,7 +197,9 @@ public class FormatASS implements TimedTextFileFormat {
 			tto.warnings+= "unexpected end of file, maybe last caption is not complete.\n\n";
 		} finally{
 			//we close the reader
-			is.close();
+			if (is != null) {
+				is.close();
+			}
 		}
 
 		tto.built = true;

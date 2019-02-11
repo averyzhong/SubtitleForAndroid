@@ -182,8 +182,9 @@ public class FormatSTL implements TimedTextFileFormat {
 				tto.warnings += "Number of parsed subtitles ("+subtitleNumber+") different from expected number of subtitles ("+numberOfSubtitles+").\n\n";
 
 			//we close the reader
-			is.close();
-
+			if (is != null) {
+				is.close();
+			}
 
 			tto.cleanUnusedStyles();
 
