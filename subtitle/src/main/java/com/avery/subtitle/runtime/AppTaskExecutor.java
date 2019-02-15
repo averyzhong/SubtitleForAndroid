@@ -38,7 +38,7 @@ public class AppTaskExecutor extends TaskExecutor {
     private TaskExecutor mDelegate;
     private TaskExecutor mDefaultTaskExecutor;
 
-    private static AppTaskExecutor sInstance;
+    private static volatile AppTaskExecutor sInstance;
 
     @NonNull
     public static TaskExecutor getInstance() {
