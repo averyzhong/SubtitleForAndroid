@@ -1,3 +1,5 @@
+CSDN blog: https://blog.csdn.net/han_han_1/article/details/86747472
+
 [ ![Download](https://api.bintray.com/packages/averyzhong/AndroidRepo/subtitle/images/download.svg) ](https://bintray.com/averyzhong/AndroidRepo/subtitle/_latestVersion)
 
 # Android外挂字幕组件库（Subtitle For Android)
