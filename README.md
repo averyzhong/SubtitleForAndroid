@@ -11,7 +11,7 @@ Subtitle For Android 是一个Android平台视频播放多字幕支持库，几�
 ## 下载
 
 ```
-implementation 'com.avery:subtitle:x.x.x' // 最新版本号请看上面"Download"气泡后面的数字
+implementation 'com.avery:subtitle:1.0.6' // 最新版本号请看上面"Download"气泡后面的数字
 ```
 
 >
