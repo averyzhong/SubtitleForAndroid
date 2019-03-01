@@ -70,7 +70,7 @@ implementation 'com.avery:subtitle:1.0.6' // 最新版本号请看上面"Downloa
 `SimpleSubtitleView`还有其他与`Activity`生命周期相似的方法：`start()`，`pause()`，`resume()`，`stop()`，`reset()` 可以根据具体集成情况在适当的地方进行调用。
 
 ## 字幕样式设置
-`SimpleSubtitleView`集成自`TextView`，所以`TextView`的所有样式设置都适用于`SimpleSubtitleView`，如设置字幕颜色、字幕大小、字幕对其方式等。
+`SimpleSubtitleView`继承自`TextView`，所以`TextView`的所有样式设置都适用于`SimpleSubtitleView`，如设置字幕颜色、字幕大小、字幕对其方式等。
 
 ## 注意！！！
 > 1. 最好在`MediaPlayer`初始化完成后才能调用`SimpleSubtitleView.setSubtitlePath()`方法，最好的时机是在MediaPlayer的`onPrepared`回调方法里调用`SimpleSubtitleView.setSubtitlePath()`。
