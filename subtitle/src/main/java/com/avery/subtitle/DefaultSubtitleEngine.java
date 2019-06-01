@@ -74,8 +74,7 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
 
     @Override
     public void setSubtitlePath(final String path) {
-        initWorkThread();
-        reset();
+        doOnSubtitlePathSet();
         if (TextUtils.isEmpty(path)) {
             Log.w(TAG, "loadSubtitleFromRemote: path is null.");
             return;
@@ -110,11 +109,18 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
         });
     }
 
+    private void doOnSubtitlePathSet() {
+        reset();
+        createWorkThread();
+
+    }
+
     @Override
     public void reset() {
-        stop();
+        stopWorkThread();
         mSubtitles = null;
         mUIRenderTask = null;
+
     }
 
     @Override
@@ -128,8 +134,8 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
                     "bindToMediaPlayer(MediaPlayer mediaPlayer) method.");
             return;
         }
-        stop();
         if (mWorkHandler != null) {
+            mWorkHandler.removeMessages(MSG_REFRESH);
             mWorkHandler.sendEmptyMessageDelayed(MSG_REFRESH, REFRESH_INTERVAL);
         }
 
@@ -137,7 +143,9 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
 
     @Override
     public void pause() {
-        stop();
+        if (mWorkHandler != null) {
+            mWorkHandler.removeMessages(MSG_REFRESH);
+        }
     }
 
     @Override
@@ -156,12 +164,12 @@ public class DefaultSubtitleEngine implements SubtitleEngine {
     public void destroy() {
         Log.d(TAG, "destroy: ");
         stopWorkThread();
-        reset();
+        mSubtitles = null;
+        mUIRenderTask = null;
 
     }
 
-    private void initWorkThread() {
-        stopWorkThread();
+    private void createWorkThread() {
         mHandlerThread = new HandlerThread("SubtitleFindThread");
         mHandlerThread.start();
         mWorkHandler = new Handler(mHandlerThread.getLooper(), new Handler.Callback() {
